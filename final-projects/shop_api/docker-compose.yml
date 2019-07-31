@@ -1,0 +1,14 @@
+# Docker Compose reference: https://docs.docker.com/compose/
+version: '3'
+services:
+  database:
+    image: postgres:11.4
+  api:
+    build: .
+    command: mix run --no-halt
+    volumes:
+      - .:/shop_api
+    ports:
+      - "4000:4040"
+    depends_on:
+      - database
