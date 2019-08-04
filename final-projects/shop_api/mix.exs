@@ -32,7 +32,10 @@ defmodule ShopApi.MixProject do
       {:plug_cowboy, "~> 2.0"},
 
       # Postgrex reference: https://hexdocs.pm/postgrex
-      {:postgrex, "~> 0.15"}
+      {:postgrex, "~> 0.15"},
+
+      # Jason reference: https://hexdocs.pm/jason
+      {:jason, "~> 1.1"}
     ]
   end
 end
