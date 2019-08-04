@@ -7,8 +7,8 @@ defmodule ShopApi.Application do
 
   def start(_type, _args) do
     children = [
-      # Starts a worker by calling: ShopApi.Worker.start_link(arg)
-      # {ShopApi.Worker, arg}
+      # More info: https://hexdocs.pm/plug_cowboy/Plug.Cowboy.html#child_spec/1
+      Plug.Cowboy.child_spec(scheme: :http, plug: ShopApi.Endpoint, options: [port: 4040])
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
