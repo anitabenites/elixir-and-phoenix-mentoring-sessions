@@ -7,7 +7,7 @@ defmodule ShopApi.Application do
 
   def start(_type, _args) do
     children = [
-      # More info: https://hexdocs.pm/plug_cowboy/Plug.Cowboy.html#child_spec/1
+      ShopApi.Repo,
       Plug.Cowboy.child_spec(scheme: :http, plug: ShopApi.Endpoint, options: [port: 4040])
     ]
 
